@@ -10,8 +10,7 @@ jobs:
 
     name: my test action
     runs-on: ubuntu-latest
-    env:
-      DAY_OF_WEEK: Mon
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
