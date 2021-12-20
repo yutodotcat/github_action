@@ -11,6 +11,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: yutodotcat/github_action,ghcr.io/yutodotcat/github_action
+          tags:
+            type=raw,value=latest
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -35,9 +44,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: |
-            ghcr.io/yutodotcat/github_action:latest
-            yutodotcat/github_action:latest
+          tags: ${{ steps.meta.outputs.tags }}
 
 
 
