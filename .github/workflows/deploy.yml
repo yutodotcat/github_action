@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: yutopoyo777/${{repository_name}},ghcr.io/yutodotcat/${{repository_name}}
+          images: yutopoyo777/${{ env.repository_name }},ghcr.io/yutodotcat/${{ env.repository_name }}
           tags:
             type=raw,value=latest
 
