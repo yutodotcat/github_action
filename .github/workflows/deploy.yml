@@ -1,13 +1,17 @@
 name: yuto tesuko
 on: push
 
+env:
+  repository_name : github_action
+
 jobs:
 
   my_test:
 
     name: my test action
     runs-on: ubuntu-latest
-
+    env:
+      DAY_OF_WEEK: Mon
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -16,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: yutopoyo777/github_action,ghcr.io/yutodotcat/github_action
+          images: yutopoyo777/${{repository_name}},ghcr.io/yutodotcat/${{repository_name}}
           tags:
             type=raw,value=latest
 
