@@ -31,4 +31,8 @@ jobs:
           push: true
           tags: ghcr.io/yutodotcat/github_action:latest
 
-
+      - name: Login to Dockerhub
+        uses: docker/login-action@v1
+        with:
+          username: yutopoyo777
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
