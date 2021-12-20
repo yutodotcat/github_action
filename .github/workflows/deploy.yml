@@ -27,4 +27,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: yutodotcat/github_action:latest
+          tags: ghcr.io/yutodotcat/github_action:latest
